@@ -1,0 +1,35 @@
+{
+	"name": "fecs",
+	"description": "a tool to check your js",
+	"version": "0.0.1",
+	"publisher": "jiaojian",
+    "displayName": "BAIDU FECS",
+    "description": "A FECS Linter for Visual Studio Code",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"command:fecs.fixFile"
+	],
+	"main": "./extension",
+	"contributes": {
+		"commands": [{
+			"command": "fecs.check",
+			"title": "fecs"
+		}],
+        "keybindings": [{
+            "command": "fecs.check",
+            "key": "ctrl+g",
+            "mac": "cmd+g",
+            "when": "editorTextFocus"
+        }]
+        
+	},
+	"devDependencies": {
+		"vscode": "0.10.x"
+	}
+}
