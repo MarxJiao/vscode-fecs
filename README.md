@@ -22,4 +22,4 @@ type
 fecs
 ```
 then you can see the fecs output
-![img](fecs1.git)
+![img](fecs1.gif)
