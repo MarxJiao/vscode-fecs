@@ -2,13 +2,20 @@
     "name": "fecs",
     "displayName": "fecs",
     "description": "fecs extension for vscode",
-    "version": "0.6.0",
+    "icon": "fecs.jpg",
+    "version": "0.6.1",
     "publisher": "Marx",
+    "homepage": "https://github.com/MarxJiao/VScode-fecs",
+    "bugs": "https://github.com/MarxJiao/VScode-fecs/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MarxJiao/VScode-fecs"
+    },
     "engines": {
         "vscode": "^1.0.0"
     },
     "categories": [
-        "Other"
+        "Linters"
     ],
     "activationEvents": [
         "onCommand:extension.fecs"
