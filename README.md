@@ -1,11 +1,11 @@
 # vscode fecs插件
 fecs extension for vscode
 # install
-## install fecs
+### install [fecs](http://fecs.baidu.com/)
 ```
 sudo npm install fecs -g
 ```
-## install fecs extension for vscode
+### install fecs extension for vscode
 in vscode,press ```cmd + shift + p```
 ```
 ext install fecs
