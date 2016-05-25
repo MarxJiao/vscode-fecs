@@ -1,2 +1,3 @@
-# VScode-fecs
-为visual studio开发的fecs插件
+# vscode fecs插件
+fecs for vscode
+
