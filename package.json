@@ -27,6 +27,12 @@
                 "command": "extension.fecs",
                 "title": "fecs"
             }
+        ],
+        "keybindings": [
+            {
+                "command": "extension.fecs",
+                "key": "cmd+shift+r"
+            }
         ]
     },
     "scripts": {
