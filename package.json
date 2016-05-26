@@ -41,12 +41,12 @@
                 "fecs.en": {
                     "type": "boolean",
                     "default": false,
-                    "description": "false: use English in output,true: use Chinese in output"
+                    "description": "Controls if use English in output."
                 },
                 "fecs.auto": {
                     "type": "boolean",
                     "default": false,
-                    "description": "true for auto use fecs on save, false for not"
+                    "description": "Controls if auto use fecs when saved."
                 }
             }
         }
