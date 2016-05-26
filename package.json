@@ -33,7 +33,23 @@
                 "command": "extension.fecs",
                 "key": "cmd+shift+r"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "fecs configuration",
+            "properties": {
+                "fecs.en": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "false: use English in output,true: use Chinese in output"
+                },
+                "fecs.auto": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "true for auto use fecs on save, false for not"
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
