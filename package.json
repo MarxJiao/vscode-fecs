@@ -2,7 +2,7 @@
     "name": "fecs",
     "displayName": "fecs",
     "description": "fecs extension for vscode",
-    "icon": "fecs.jpg",
+    "icon": "imges/fecs.jpg",
     "version": "0.6.2",
     "publisher": "Marx",
     "homepage": "https://github.com/MarxJiao/VScode-fecs",
