@@ -25,6 +25,14 @@
 <p>fecs extension for vscode</p>
 
 <h1>
+<a id="feature" class="anchor" href="#feature" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>feature</h1>
+
+<ul>
+<li>支持中英文切换（配置fecs.en, true: English, false: 中文）</li>
+<li>支持保存时自动使用fecs检查（配置fecs.auto, true: 自动检查, false: 输入命令或快捷键<code>cmd + shift + r</code>）</li>
+</ul>
+
+<h1>
 <a id="install" class="anchor" href="#install" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>install</h1>
 
 <h3>
@@ -44,9 +52,28 @@
 </code></pre>
 
 <h1>
+<a id="configuration" class="anchor" href="#configuration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>configuration</h1>
+
+<p>按<code>cmd + ,</code>打开用户配置，若使用默认配置则不用修改</p>
+
+<pre><code>{
+    // 配置是否使用英文显示，{boolean}
+    // 默认false，使用中文。设置为true，则使用英文
+    "fecs.en": false,
+
+    // 配置是否在保存文件时自动使用fecs，{boolean}
+    // 本着不扰民的思想，默认false，不自动使用。设置为true，则在保存时自动使用fecs
+    "fecs.auto": true
+}
+</code></pre>
+
+<h1>
 <a id="use" class="anchor" href="#use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>use</h1>
 
-<p>在打开的Javascript、HTML、CSS等fecs支持的文件下</p>
+<h3>
+<a id="1-命令操作" class="anchor" href="#1-%E5%91%BD%E4%BB%A4%E6%93%8D%E4%BD%9C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>1. 命令操作</h3>
+
+<p>在打开的javascript、HTML、CSS等fecs支持的文件下</p>
 
 <p>按 <code>cmd + shift + p</code></p>
 
@@ -55,9 +82,14 @@
 <pre><code>fecs
 </code></pre>
 
+<h3>
+<a id="2-快捷键" class="anchor" href="#2-%E5%BF%AB%E6%8D%B7%E9%94%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2. 快捷键</h3>
+
+<p><code>cmd + shift + r</code></p>
+
 <p>之后就能看见fecs输出的结果，用output输出比较方便多条信息查看，下面是演示</p>
 
-<p><img src="fecs1.gif" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/MarxJiao/VScode-fecs/master/imges/fecs1.gif" alt="fecs.git"></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/MarxJiao/VScode-fecs">Vscode-fecs</a> is maintained by <a href="https://github.com/MarxJiao">MarxJiao</a>.</span>
