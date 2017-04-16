@@ -20,23 +20,24 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('extension.fecs', () => {
         
         let fileType = vscode.window.activeTextEditor.document.languageId;
-        console.log(fileType);
         if (
             fileType === 'javascript' 
             || fileType === 'html' 
             || fileType === 'css' 
             || fileType === 'less'
         ) {
-            let ifEnglish = vscode.workspace.getConfiguration('fecs').get('en');
-            let reporter = ''
+            const ifEnglish = vscode.workspace.getConfiguration('fecs').get('en');
+            let options = ''
             if (ifEnglish) {
-                reporter = '';
+                options = '';
             }
             else {
-                reporter = ' --reporter=baidu';
+                options = ' --reporter=baidu';
             }
-            // if display output in English if 'fecs.en' is true
-            let fecsCmd = 'fecs ' + vscode.window.activeTextEditor.document.fileName + reporter;
+            const level = vscode.workspace.getConfiguration('fecs').get('level');
+            options += ' --level=' + level;
+            // display output in English if 'fecs.en' is true
+            let fecsCmd = 'fecs ' + vscode.window.activeTextEditor.document.fileName + options;
             showOutput(fecsCmd);
         }
         else {
@@ -51,17 +52,19 @@ export function activate(context: vscode.ExtensionContext) {
 
     context.subscriptions.push(disposable);
 }
-let output = vscode.window.createOutputChannel('fecs output');
+// 新建output
+const output = vscode.window.createOutputChannel('fecs output');
+
+/**
+ * 将命令执行结果显示在output中
+ *
+ * @param cmd 命令
+ */
 function showOutput(cmd:string) {
-    
-    // 新建output
-    
-    
     // 运行命令并将结果输出到output
     child_process.exec(cmd, null, function (error, stdout, stderr) {
         vscode.workspace.saveAll();
         // vscode.window.showInformationMessage(stdout);
-        console.log(stdout);
         output.clear();
         output.append(stdout);
         output.show(5,true);
@@ -70,7 +73,7 @@ function showOutput(cmd:string) {
 
 // automatically use fecs on did save file if 'extension.fecs' is true
 vscode.workspace.onDidSaveTextDocument(() => {
-    let ifAutoFecs = vscode.workspace.getConfiguration('fecs').get('auto');
+    const ifAutoFecs = vscode.workspace.getConfiguration('fecs').get('auto');
     if (ifAutoFecs) {
         vscode.commands.executeCommand('extension.fecs');
     }
