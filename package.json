@@ -3,7 +3,7 @@
     "displayName": "fecs",
     "description": "fecs extension for vscode",
     "icon": "imges/fecs.jpg",
-    "version": "0.7.0",
+    "version": "0.8.1",
     "publisher": "Marx",
     "homepage": "https://github.com/MarxJiao/VScode-fecs",
     "bugs": "https://github.com/MarxJiao/VScode-fecs/issues",
@@ -47,6 +47,11 @@
                     "type": "boolean",
                     "default": false,
                     "description": "Controls if auto use fecs when saved."
+                },
+                "fecs.level": {
+                    "type": "number",
+                    "defaulft": 0,
+                    "description": "Fecs check level. Value is 0 1 or 2"
                 }
             }
         }
