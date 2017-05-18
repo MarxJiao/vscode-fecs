@@ -4,7 +4,7 @@
 import * as vscode from 'vscode';
 
 // 使用node子进程来运行fecs命令
-import child_process = require('child_process');
+import * as child_process from 'child_process';
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
@@ -12,7 +12,6 @@ export function activate(context: vscode.ExtensionContext) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
     console.log('Congratulations, your extension "fecs" is now active!');
-    
     
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with  registerCommand
@@ -63,6 +62,8 @@ const output = vscode.window.createOutputChannel('fecs output');
 function showOutput(cmd:string) {
     // 运行命令并将结果输出到output
     child_process.exec(cmd, null, function (error, stdout, stderr) {
+        let lines = stdout.split(/\r{0,1}\n/);
+        console.log(lines);
         vscode.workspace.saveAll();
         // vscode.window.showInformationMessage(stdout);
         output.clear();
