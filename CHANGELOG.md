@@ -1,4 +1,10 @@
 # Change Log
+### 0.9.0
+- 新增jsx支持
+- 升级vscode 1.0.0以上版本使用
+- 升级node typings
+- 编译target 从es5升级到es6
+- 使用spawn替代exec
 
 ### 0.8.1
 - 添加level配置说明
