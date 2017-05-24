@@ -26,9 +26,12 @@ export function activate(context: vscode.ExtensionContext) {
                 || fileType === 'css' 
                 || fileType === 'less'
                 || fileType === 'jsx'
+                || fileType === 'javascriptreact'
             ) {
-                const ifEnglish = vscode.workspace.getConfiguration('fecs').get('en');
                 let options = [vscode.window.activeTextEditor.document.fileName];
+
+                // display output in English if 'fecs.en' is true
+                const ifEnglish = vscode.workspace.getConfiguration('fecs').get('en');
                 if (ifEnglish) {
                 }
                 else {
@@ -36,7 +39,6 @@ export function activate(context: vscode.ExtensionContext) {
                 }
                 const level = vscode.workspace.getConfiguration('fecs').get('level');
                 options.push('--level=' + level);
-                // display output in English if 'fecs.en' is true
                 
                 showOutput(options);
                 return;
