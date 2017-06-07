@@ -58,7 +58,6 @@ fecs
 # BUGS
 
 - 自动保存功能需要手动触发一次才能使用 [#8](https://github.com/MarxJiao/VScode-fecs/issues/8)
-- window下暂时不可用[#9](https://github.com/MarxJiao/VScode-fecs/issues/9)。手头没有windows电脑，借电脑调试过一次，被windows的node虐了。欢迎各路大神提pr。
 
 # DEVELOPMENT
 
