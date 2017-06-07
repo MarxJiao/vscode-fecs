@@ -66,8 +66,27 @@ const output = vscode.window.createOutputChannel('fecs output');
 function showOutput(options: string[]) {
     // 先清空output
     output.clear();
+
+    // 命令参数
+    let command = 'fecs';
+    let commandOption = options;
+
+    // windows下参数特殊处理
+    if (/^win/.test(process.platform)) {
+        // 命令
+        command = 'cmd';
+
+        // 把盘符换成大写
+        let filePathArr = options[0].split(':');
+        filePathArr[0] = filePathArr[0].toUpperCase();
+        const filePath = filePathArr.join(':');
+        
+        options.shift();
+        const shellScript = '/c fecs check ' + filePath + ' ' +  options.join(' ');
+        commandOption = shellScript.split(' ');
+    }
     // 运行命令
-    const fecs = child_process.spawn('fecs', options);
+    const fecs = child_process.spawn(command, commandOption);
     // 有数据时向output添加数据
     fecs.stdout.on('data', data => {
         vscode.workspace.saveAll();
@@ -81,6 +100,7 @@ function showOutput(options: string[]) {
         output.append(data.toString());
         output.show(5, true);
     })
+    
 }
 
 // automatically use fecs on did save file if 'extension.fecs' is true
