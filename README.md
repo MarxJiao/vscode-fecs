@@ -69,3 +69,14 @@ npm install
 npm run compile
 ```
 之后点击debug按钮，就会开启一个已经安装好正在开发的插件的窗口。
+
+# Files
+
+支持的文件后缀
+- js
+- html
+- css
+- less
+- jsx
+- es
+- vue

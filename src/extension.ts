@@ -19,16 +19,35 @@ export function activate(context: vscode.ExtensionContext) {
     let disposable = vscode.commands.registerCommand('extension.fecs', () => {
         // let fileType = vscode.window.activeTextEditor.document.languageId;
         if(vscode.window.activeTextEditor) {
-            const fileType = vscode.window.activeTextEditor.document.languageId;
+            const fileName = vscode.window.activeTextEditor.document.fileName;
+            let fileType: string;
+            let matchArry: Array<any> | null;
+            if (fileName) {
+                matchArry = fileName.match(/.*\.(.*)$/);
+                if (matchArry !== null) {
+                    fileType = matchArry[1].toLowerCase();
+                }
+                else {
+                    deactivate();
+                    return false;
+                }
+            }
+            else {
+                deactivate();
+                return false;
+            }
+            // const fileType = vscode.window.activeTextEditor.document.languageId;
             if (
-                fileType === 'javascript' 
+                fileType === 'js'
+                || fileType === 'es' 
                 || fileType === 'html' 
                 || fileType === 'css' 
                 || fileType === 'less'
                 || fileType === 'jsx'
-                || fileType === 'javascriptreact'
+                || fileType === 'vue'
             ) {
-                let options = [vscode.window.activeTextEditor.document.fileName];
+                
+                let options = [fileName];
 
                 // display output in English if 'fecs.en' is true
                 const ifEnglish = vscode.workspace.getConfiguration('fecs').get('en');
