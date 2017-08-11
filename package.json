@@ -53,34 +53,32 @@
                     "type": "number",
                     "defaulft": 0,
                     "description": "Fecs check level. Value is 0 1 or 2"
+                },
+                "fecs.all": {
+                    "type": "boolean",
+                    "defaulft": true,
+                    "description": "Controls if all use fecs check whole file"
                 }
             }
-            
         }
     },
     "problemMatchers": [
-                {
-
-                    "name": "fecs",
-
-                    "owner": "javascript",
-
-                    "fileLocation": ["relative", "${cwd}"],
-
-                    "pattern": {
-
-                        "regexp": "^fecs\\s+?(.*)\\s→\\sline\\s(\\d+),\\scol\\s(\\d+):\\s(.*)",
-
-                        "line": 2,
-
-                        "column": 3,
-
-                        "severity": 1,
-
-                        "message": 4
-                    }
-                }
+        {
+            "name": "fecs",
+            "owner": "javascript",
+            "fileLocation": [
+                "relative",
+                "${cwd}"
             ],
+            "pattern": {
+                "regexp": "^fecs\\s+?(.*)\\s→\\sline\\s(\\d+),\\scol\\s(\\d+):\\s(.*)",
+                "line": 2,
+                "column": 3,
+                "severity": 1,
+                "message": 4
+            }
+        }
+    ],
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
         "compile": "tsc -watch -p ./",
