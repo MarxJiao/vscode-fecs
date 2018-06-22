@@ -80,3 +80,4 @@ npm run compile
 - jsx
 - es
 - vue
+- atom

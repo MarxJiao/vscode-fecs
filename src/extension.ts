@@ -39,12 +39,13 @@ export function activate(context: vscode.ExtensionContext) {
             // const fileType = vscode.window.activeTextEditor.document.languageId;
             if (
                 fileType === 'js'
-                || fileType === 'es' 
-                || fileType === 'html' 
-                || fileType === 'css' 
+                || fileType === 'es'
+                || fileType === 'html'
+                || fileType === 'css'
                 || fileType === 'less'
                 || fileType === 'jsx'
                 || fileType === 'vue'
+                || fileType === 'atom'
             ) {
                 
                 let options = [fileName];
