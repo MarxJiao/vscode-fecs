@@ -1,5 +1,8 @@
 # vscode fecs插件
+
 Fecs extension for vscode
+
+推荐使用更好的 fecs 检查插件 [vscode-fecs-plugin](https://github.com/l5oo00/vscode-fecs-plugin)
 
 # Feature
  - 支持中英文切换，默认中文
